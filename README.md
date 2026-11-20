@@ -98,7 +98,3 @@ Contributions are welcome. If you want to add new keyboard layouts (such as Span
 ## License
 
 This project is distributed under the MIT license — see the `LICENSE` file in the repository for more details.
-
-```
-
-```
