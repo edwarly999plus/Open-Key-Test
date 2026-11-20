@@ -1,4 +1,3 @@
-```markdown
 # OpenKeyTest
 
 **OpenKeyTest** (`v1.0.0`) is a free, open-source web tool designed to run real-time interactive diagnostics on keyboards, mechanical *switches*, function keys, and media controls directly in the browser—no extra software installation required.
@@ -98,7 +97,7 @@ Contributions are welcome. If you want to add new keyboard layouts (such as Span
 
 ## License
 
-This project is distributed under the `[specify license, e.g., MIT]` license — see the `LICENSE` file in the repository for more details.
+This project is distributed under the MIT license — see the `LICENSE` file in the repository for more details.
 
 ```
 
