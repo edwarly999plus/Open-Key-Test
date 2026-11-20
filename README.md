@@ -1,53 +1,53 @@
 # OpenKeyTest
 
-**OpenKeyTest** (`v1.0.0`) es una herramienta web gratuita y de código abierto diseñada para realizar diagnósticos interactivos en tiempo real de teclados, *switches* mecánicos, teclas de función y controles multimedia directamente desde el navegador, sin necesidad de instalar software adicional.
+**OpenKeyTest** (`v1.0.0`) is a free, open-source web tool designed to run real-time interactive diagnostics on keyboards, mechanical *switches*, function keys, and media controls directly in the browser—no extra software installation required.
 
 ---
 
-## Características Principales
+## Key Features
 
-- **Detección visual de 4 estados:**
-  - **Gris (Sin probar):** Tecla aún no pulsada.
-  - **Verde (Detectada OK):** Tecla detectada correctamente (verde brillante mientras se mantiene pulsada, verde suave al soltarla).
-  - **Azul (Función de Sistema / Multimedia):** Identifica teclas especiales de brillo, volumen, reproducción multimedia, bloqueo, captura de pantalla y tecla `Fn`.
-  - **Rojo (Averiada):** Permite marcar manualmente teclas defectuosas o que no responden haciendo **clic derecho** sobre ellas o activando el **Modo Marcar Avería**.
-- **Soporte Multi-Distribución e Idioma:**
+- **4-state visual detection:**
+  - **Gray (Untested):** Key has not been pressed yet.
+  - **Green (Detected OK):** Key detected properly (bright green while held down, soft green when released).
+  - **Blue (System / Media Function):** Identifies special keys for brightness, volume, media playback, lock, screenshot, and the `Fn` key.
+  - **Red (Faulty):** Lets you manually mark broken or unresponsive keys by **right-clicking** them or enabling **Faulty Mark Mode**.
+- **Multi-Layout & Language Support:**
   - `QWERTY` — English (USA)
   - `QWERTY` — Español (LATAM)
   - `AZERTY` — Français (France)
   - `QWERTZ` — Deutsch (Deutschland)
   - `Dvorak` — Simplified
-- **Compatibilidad de Sistema Operativo:** Alterna dinámicamente las etiquetas y asignaciones de teclas modificadoras entre **Windows** (`Win`, `Ctrl`, `Alt`) y **macOS** (`Command ⌘`, `Control ⌃`, `Option ⌥`).
-- **Formatos de Teclado:**
-  - **Laptop (75%):** Compacto con fila de funciones integradas y flechas.
-  - **Con Numérico (100%):** Teclado estándar completo con bloque de navegación y *NumPad*.
-  - **Completo Extendido:** Añade controles dedicados de brillo y volumen sobre el teclado numérico.
-- **Probador de Funciones de Sistema / Multimedia:** Barra dedicada para validar teclas físicas o virtuales de brillo (`Br-`/`Br+`), volumen, multimedia (`Anterior`, `Play/Pause`, `Siguiente`), bloqueo, hibernación, proyección, silencio de micrófono, modo avión, lupa y nueva pestaña.
-- **Feedback Sonoro Sintetizado (Web Audio API):** Genera efectos de sonido en tiempo real sin archivos de audio externos, con control de volumen y perfiles seleccionables:
-  - *Mecánico Clicky (Azul)*
-  - *Mecánico Táctil (Marrón)*
-  - *Membrana Suave*
-  - *Silencio*
-- **Inspector de Eventos y Telemetría:** Muestra en tiempo real los valores de `event.key`, `event.code`, `keyCode`, barra de porcentaje de progreso, contadores de teclas (probadas, funciones, averiadas y total) e historial de las últimas 24 pulsaciones.
-- **Exportación a PNG:** Genera y descarga una captura limpia en alta resolución (`OpenKeyTest_Teclado_YYYY-MM-DD.png`) mostrando únicamente la leyenda de estados y el mapa del teclado mediante `html2canvas`.
+- **Operating System Compatibility:** Dynamically switches modifier key labels and mappings between **Windows** (`Win`, `Ctrl`, `Alt`) and **macOS** (`Command ⌘`, `Control ⌃`, `Option ⌥`).
+- **Keyboard Form Factors:**
+  - **Laptop (75%):** Compact layout with an integrated function row and arrow keys.
+  - **With Numpad (100%):** Full standard keyboard with a navigation cluster and *NumPad*.
+  - **Full Extended:** Adds dedicated brightness and volume controls above the numeric keypad.
+- **System / Media Function Tester:** Dedicated bar for testing physical or virtual keys for brightness (`Br-`/`Br+`), volume, media (`Prev Track`, `Play / Pause`, `Next Track`), lock, hibernate, project/display, mic mute, airplane mode, magnifier, and home / new tab.
+- **Synthesized Sound Feedback (Web Audio API):** Generates real-time sound effects with no external audio files, featuring volume control and selectable profiles:
+  - *Mechanical Clicky (Blue)*
+  - *Mechanical Tactile (Brown)*
+  - *Soft Membrane*
+  - *Muted*
+- **Event Inspector & Telemetry:** Displays live `event.key`, `event.code`, and `keyCode` values, a progress percentage bar, key counters (tested, functions, faulty, and total), and a history of the last 24 keystrokes.
+- **PNG Export:** Generates and downloads a clean high-resolution snapshot (`OpenKeyTest_Teclado_YYYY-MM-DD.png`) showing only the status legend and keyboard map via `html2canvas`.
 
 ---
 
-## Tecnologías Utilizadas
+## Technologies Used
 
-- **HTML5 & JavaScript (Vanilla ES6+):** Arquitectura autocontenida en un único archivo sin dependencias de compilación (*zero-build*).
-- **Tailwind CSS (CDN):** Interfaz moderna con diseño *glassmorphism* en modo oscuro.
-- **Web Audio API:** Síntesis procedural de sonido de pulsación (*noise bursts* y osciladores) en el navegador.
-- **html2canvas:** Exportación directa del diagnóstico visual a imagen PNG.
-- **Google Fonts:** Tipografías *Inter* y *JetBrains Mono*.
+- **HTML5 & JavaScript (Vanilla ES6+):** Self-contained single-file architecture with zero build dependencies (*zero-build*).
+- **Tailwind CSS (CDN):** Modern dark-mode UI with a *glassmorphism* design.
+- **Web Audio API:** Procedural keystroke sound synthesis (*noise bursts* and oscillators) in the browser.
+- **html2canvas:** Direct export of the visual diagnostic view to a PNG image.
+- **Google Fonts:** *Inter* and *JetBrains Mono* typefaces.
 
 ---
 
-## Instalación y Uso
+## Installation and Usage
 
-Al tratarse de una aplicación web estática autocontenida en un solo archivo (`OpenKeyTest.html`), no requiere servidores complejos ni gestores de paquetes:
+Because this is a self-contained static web application in a single file (`OpenKeyTest.html`), it requires no complex servers or package managers:
 
-### 1. Clonar el repositorio
+### 1. Clone the repository
 
 ```bash
 git clone [https://github.com/edwarly999plus/Open-Key-Test.git](https://github.com/edwarly999plus/Open-Key-Test.git)
@@ -55,46 +55,50 @@ cd Open-Key-Test
 
 ```
 
-### 2. Ejecutar la aplicación
+### 2. Run the application
 
-* **Opción A (Directa):** Haz doble clic sobre `OpenKeyTest.html` para abrirlo directamente en cualquier navegador moderno (Chrome, Firefox, Edge, Safari, Brave).
-* **Opción B (Servidor local):** Si prefieres servirlo mediante HTTP local:
+* **Option A (Direct):** Double-click `OpenKeyTest.html` to open it directly in any modern browser (Chrome, Firefox, Edge, Safari, Brave).
+* **Option B (Local server):** If you prefer serving it over local HTTP:
 
 ```bash
-# Usando Python 3
+# Using Python 3
 python -m http.server 8080
 
 ```
 
-Luego accede a `http://localhost:8080/OpenKeyTest.html` en tu navegador.
+Then open `http://localhost:8080/OpenKeyTest.html` in your browser.
 
 ---
 
-## Guía Rápida de Diagnóstico
+## Quick Diagnostic Guide
 
-| Acción | Resultado |
+| Action | Result |
 | --- | --- |
-| **Pulsar cualquier tecla física** | La tecla se ilumina en **verde** (o **azul** si es multimedia/sistema) y registra su telemetría. |
-| **Clic derecho sobre una tecla** | Marca o desmarca la tecla en **rojo** como averiada. |
-| **Botón `Modo Marcar Avería**` | Permite marcar teclas averiadas usando **clic izquierdo** (ideal para pantallas táctiles o *trackpads*). |
-| **Botón `Teclas de Función**` | Muestra u oculta la fila superior `F1–F12` y la barra multimedia. |
-| **Botón `Reiniciar Prueba**` | Restablece a gris todas las teclas probadas manteniendo las marcas de teclas averiadas. |
-| **Botón `Guardar PNG**` | Descarga una imagen del estado actual del teclado para reportes técnicos o garantías. |
+| **Press any physical key** | Lights up the key in **green** (or **blue** if it is a media/system key) and logs its telemetry. |
+| **Right-click a key** | Marks or unmarks the key in **red** as faulty. |
+| **`Faulty Mark Mode` button** | Lets you mark faulty keys using a **left click** (ideal for touchscreens or *trackpads*). |
+| **`Function Keys` button** | Shows or hides the top `F1–F12` row and the media bar. |
+| **`Reset Test` button** | Resets all tested keys back to gray while keeping faulty key marks. |
+| **`Save PNG` button** | Downloads an image of the current keyboard state for technical reports or warranty claims. |
 
 ---
 
-## Contribuir
+## Contributing
 
-Las contribuciones son bienvenidas. Si deseas agregar nuevas distribuciones de teclado (como ISO Español, ABNT2 Portugués o JIS Japonés), mejorar la detección de eventos o reportar un error:
+Contributions are welcome. If you want to add new keyboard layouts (such as Spanish ISO, Portuguese ABNT2, or Japanese JIS), improve event detection, or report a bug:
 
-1. Haz un **Fork** del proyecto.
-2. Crea una rama para tu mejora (`git checkout -b feature/nueva-distribucion`).
-3. Realiza tus cambios y haz *commit* (`git commit -m "Agrega distribución ISO-ES"`).
-4. Sube los cambios a tu rama (`git push origin feature/nueva-distribucion`).
-5. Abre un **Pull Request**.
+1. **Fork** the project.
+2. Create a branch for your improvement (`git checkout -b feature/new-layout`).
+3. Make your changes and *commit* them (`git commit -m "Add ISO-ES layout"`).
+4. Push your changes to your branch (`git push origin feature/new-layout`).
+5. Open a **Pull Request**.
 
 ---
 
-## Licencia
+## License
 
-Este proyecto se distribuye bajo la licencia `[especificar licencia, ej. MIT]` — consulta el archivo `LICENSE` en el repositorio para más detalles.
+This project is distributed under the `[specify license, e.g., MIT]` license — see the `LICENSE` file in the repository for more details.
+
+```
+
+```
