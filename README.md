@@ -1,3 +1,4 @@
+```markdown
 # OpenKeyTest
 
 **OpenKeyTest** (`v1.0.0`) is a free, open-source web tool designed to run real-time interactive diagnostics on keyboards, mechanical *switches*, function keys, and media controls directly in the browser—no extra software installation required.
