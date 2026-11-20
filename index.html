@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OpenKeyTest - Interactive Hardware & Switch Diagnostics</title>
+    <link rel="icon" type="image/png" href="Logo.png">
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- html2canvas: exportar resultados a PNG -->
@@ -325,18 +326,22 @@
         <header class="glass-panel rounded-2xl p-4 sm:p-5 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-4 export-hide">
             <!-- Logo y Título -->
             <div class="flex items-center gap-3.5">
-                <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-emerald-500 via-teal-600 to-sky-600 flex items-center justify-center shadow-lg shadow-emerald-500/20 border border-emerald-400/30">
-                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17V7m0 10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h2a2 2 0 012 2m0 10a2 2 0 002 2h2a2 2 0 002-2M9 7a2 2 0 012-2h2a2 2 0 012 2m0 10V7m0 10a2 2 0 002 2h2a2 2 0 002-2V7a2 2 0 00-2-2h-2a2 2 0 00-2 2" />
-                    </svg>
+                <div class="w-11 h-11 rounded-xl bg-slate-900/90 flex items-center justify-center shadow-lg shadow-emerald-500/20 border border-emerald-400/30 overflow-hidden shrink-0">
+                    <img src="Logo.png" alt="OpenKeyTest Logo" class="w-full h-full object-contain">
                 </div>
                 <div>
-                    <div class="flex items-center gap-2">
+                    <div class="flex items-center gap-2 flex-wrap">
                         <h1 class="text-xl sm:text-2xl font-bold tracking-tight text-white">OpenKey<span class="text-emerald-400">Test</span></h1>
                         <span class="text-[10px] font-mono px-1.5 py-0.5 rounded bg-slate-800/80 text-slate-400 border border-white/10">v1.0.0</span>
                         <span id="badge-live" class="px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 rounded-full flex items-center gap-1.5">
                             <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 live-dot"></span> <span data-i18n="liveBadge">En vivo</span>
                         </span>
+                        <a href="https://github.com/edwarly999plus/Open-Key-Test" target="_blank" rel="noopener noreferrer" aria-label="EdwarlyGamer999+ on GitHub" class="px-2 py-0.5 text-[11px] font-mono bg-slate-800/90 hover:bg-slate-700/90 text-slate-300 hover:text-emerald-300 border border-white/10 hover:border-emerald-500/30 rounded-full inline-flex items-center gap-1.5 transition-colors">
+                            <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+                            </svg>
+                            <span>EdwarlyGamer999+</span>
+                        </a>
                     </div>
                     <p data-i18n="subtitle" class="text-xs sm:text-sm text-slate-400">Diagnóstico interactivo de hardware, switches y teclas multimedia</p>
                 </div>
@@ -347,7 +352,7 @@
                 
                 <!-- Selector de Distribución de Teclado (QWERTY EN/ES, AZERTY, QWERTZ, Dvorak) -->
                 <div class="flex flex-col gap-1">
-                    <span data-i18n="lblLang" class="text-[10px] font-semibold uppercase tracking-wider text-slate-400 pl-1">Distribución de Teclado</span>
+                    <label for="lang-select" data-i18n="lblLang" class="text-[10px] font-semibold uppercase tracking-wider text-slate-400 pl-1">Distribución de Teclado</label>
                     <select id="lang-select" onchange="setLanguage(this.value)" class="bg-slate-950/80 text-xs font-semibold text-slate-200 rounded-xl border border-white/10 px-3 py-2 focus:outline-none focus:border-emerald-500/50 cursor-pointer min-w-[210px]">
                         <option value="en" class="bg-slate-900" selected>QWERTY — English (USA)</option>
                         <option value="es" class="bg-slate-900">QWERTY — Español (LATAM)</option>
@@ -361,12 +366,12 @@
                 <div class="flex flex-col gap-1">
                     <span data-i18n="lblSystem" class="text-[10px] font-semibold uppercase tracking-wider text-slate-400 pl-1">Sistema</span>
                     <div class="inline-flex bg-slate-950/80 p-1 rounded-xl border border-white/10" role="group">
-                        <button id="btn-os-win" onclick="setOS('windows')" class="px-3 py-1.5 rounded-lg text-xs font-semibold flex items-center gap-1.5 transition-all bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 shadow-sm">
-                            <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor"><path d="M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.4H10.949M0 12.6h9.75v9.451L0 20.699M10.949 12.6H24V24l-12.9-1.801"/></svg>
+                        <button type="button" id="btn-os-win" onclick="setOS('windows')" class="px-3 py-1.5 rounded-lg text-xs font-semibold flex items-center gap-1.5 transition-all bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 shadow-sm">
+                            <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.4H10.949M0 12.6h9.75v9.451L0 20.699M10.949 12.6H24V24l-12.9-1.801"/></svg>
                             Windows
                         </button>
-                        <button id="btn-os-mac" onclick="setOS('macos')" class="px-3 py-1.5 rounded-lg text-xs font-semibold flex items-center gap-1.5 transition-all text-slate-400 hover:text-white border border-transparent">
-                            <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.96 6.32c.67-.81 1.12-1.94 1-3.07-.96.04-2.13.64-2.82 1.45-.61.7-.15 1.85-1.02 2.96 1.07.08 2.17-.53 2.84-1.34z"/></svg>
+                        <button type="button" id="btn-os-mac" onclick="setOS('macos')" class="px-3 py-1.5 rounded-lg text-xs font-semibold flex items-center gap-1.5 transition-all text-slate-400 hover:text-white border border-transparent">
+                            <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.96 6.32c.67-.81 1.12-1.94 1-3.07-.96.04-2.13.64-2.82 1.45-.61.7-.15 1.85-1.02 2.96 1.07.08 2.17-.53 2.84-1.34z"/></svg>
                             macOS
                         </button>
                     </div>
@@ -376,13 +381,13 @@
                 <div class="flex flex-col gap-1">
                     <span data-i18n="lblLayout" class="text-[10px] font-semibold uppercase tracking-wider text-slate-400 pl-1">Formato de Teclado</span>
                     <div class="inline-flex bg-slate-950/80 p-1 rounded-xl border border-white/10">
-                        <button id="btn-layout-laptop" onclick="setLayout('laptop')" data-i18n="layoutLaptop" class="px-3 py-1.5 rounded-lg text-xs font-semibold transition-all text-slate-400 hover:text-white border border-transparent">
+                        <button type="button" id="btn-layout-laptop" onclick="setLayout('laptop')" data-i18n="layoutLaptop" class="px-3 py-1.5 rounded-lg text-xs font-semibold transition-all text-slate-400 hover:text-white border border-transparent">
                             Laptop (75%)
                         </button>
-                        <button id="btn-layout-numpad" onclick="setLayout('numpad')" data-i18n="layoutNumpad" class="px-3 py-1.5 rounded-lg text-xs font-semibold transition-all bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 shadow-sm">
+                        <button type="button" id="btn-layout-numpad" onclick="setLayout('numpad')" data-i18n="layoutNumpad" class="px-3 py-1.5 rounded-lg text-xs font-semibold transition-all bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 shadow-sm">
                             Con Numérico (100%)
                         </button>
-                        <button id="btn-layout-full" onclick="setLayout('full')" data-i18n="layoutFull" class="px-3 py-1.5 rounded-lg text-xs font-semibold transition-all text-slate-400 hover:text-white border border-transparent">
+                        <button type="button" id="btn-layout-full" onclick="setLayout('full')" data-i18n="layoutFull" class="px-3 py-1.5 rounded-lg text-xs font-semibold transition-all text-slate-400 hover:text-white border border-transparent">
                             Completo Extendido
                         </button>
                     </div>
@@ -390,9 +395,9 @@
 
                 <!-- Control de Audio Web Audio API -->
                 <div class="flex flex-col gap-1">
-                    <span data-i18n="lblSound" class="text-[10px] font-semibold uppercase tracking-wider text-slate-400 pl-1">Feedback Sonoro</span>
+                    <label for="sound-profile" data-i18n="lblSound" class="text-[10px] font-semibold uppercase tracking-wider text-slate-400 pl-1">Feedback Sonoro</label>
                     <div class="flex items-center gap-2 bg-slate-950/80 px-3 py-1.5 rounded-xl border border-white/10">
-                        <svg id="sound-icon" class="w-4 h-4 text-emerald-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg id="sound-icon" class="w-4 h-4 text-emerald-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
                         </svg>
                         <select id="sound-profile" onchange="previewSound()" class="bg-transparent text-xs font-semibold text-slate-200 focus:outline-none cursor-pointer">
@@ -401,6 +406,7 @@
                             <option value="membrane" data-i18n="sndMembrane" class="bg-slate-900">Membrana Suave</option>
                             <option value="mute" data-i18n="sndMute" class="bg-slate-900">Silencio</option>
                         </select>
+                        <label for="sound-volume" class="sr-only">Volume</label>
                         <input id="sound-volume" type="range" min="0" max="1" step="0.05" value="0.6" title="Volume" class="w-16 accent-emerald-500 cursor-pointer">
                     </div>
                 </div>
@@ -432,28 +438,28 @@
 
             <!-- Botones de Acción -->
             <div class="flex flex-wrap items-center gap-2.5 export-hide">
-                <button id="btn-fault-mode" onclick="toggleFaultMode()" class="px-3.5 py-2 rounded-xl text-xs font-semibold flex items-center gap-2 transition-all bg-slate-800/90 hover:bg-slate-700 text-slate-200 border border-white/10">
+                <button type="button" id="btn-fault-mode" onclick="toggleFaultMode()" class="px-3.5 py-2 rounded-xl text-xs font-semibold flex items-center gap-2 transition-all bg-slate-800/90 hover:bg-slate-700 text-slate-200 border border-white/10">
                     <span class="w-2 h-2 rounded-full bg-red-500"></span>
                     <span><span data-i18n="btnFaultMode">Modo Marcar Avería:</span> <strong id="fault-mode-label" class="text-slate-400">OFF</strong></span>
                 </button>
 
-                <button onclick="clearFaultyKeys()" class="px-3.5 py-2 rounded-xl text-xs font-semibold flex items-center gap-1.5 transition-all bg-red-500/10 hover:bg-red-500/20 text-red-300 border border-red-500/25">
-                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" /></svg>
+                <button type="button" onclick="clearFaultyKeys()" class="px-3.5 py-2 rounded-xl text-xs font-semibold flex items-center gap-1.5 transition-all bg-red-500/10 hover:bg-red-500/20 text-red-300 border border-red-500/25">
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" /></svg>
                     <span data-i18n="btnClearFaulty">Limpiar Averiadas</span>
                 </button>
 
-                <button onclick="resetTestedKeys()" class="px-3.5 py-2 rounded-xl text-xs font-semibold flex items-center gap-1.5 transition-all bg-emerald-500/15 hover:bg-emerald-500/25 text-emerald-300 border border-emerald-500/30 shadow-sm">
-                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" /></svg>
+                <button type="button" onclick="resetTestedKeys()" class="px-3.5 py-2 rounded-xl text-xs font-semibold flex items-center gap-1.5 transition-all bg-emerald-500/15 hover:bg-emerald-500/25 text-emerald-300 border border-emerald-500/30 shadow-sm">
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" /></svg>
                     <span data-i18n="btnReset">Reiniciar Prueba</span>
                 </button>
 
-                <button onclick="saveResultsPNG()" class="px-3.5 py-2 rounded-xl text-xs font-semibold flex items-center gap-1.5 transition-all bg-sky-500/15 hover:bg-sky-500/25 text-sky-300 border border-sky-500/30 shadow-sm">
-                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
+                <button type="button" onclick="saveResultsPNG()" class="px-3.5 py-2 rounded-xl text-xs font-semibold flex items-center gap-1.5 transition-all bg-sky-500/15 hover:bg-sky-500/25 text-sky-300 border border-sky-500/30 shadow-sm">
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
                     <span data-i18n="btnSavePNG">Guardar PNG</span>
                 </button>
 
-                <button id="btn-fn-keys" onclick="toggleFnKeys()" class="px-3.5 py-2 rounded-xl text-xs font-semibold flex items-center gap-1.5 transition-all bg-violet-500/15 hover:bg-violet-500/25 text-violet-300 border border-violet-500/30 shadow-sm">
-                    <svg id="fn-keys-icon" class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" /></svg>
+                <button type="button" id="btn-fn-keys" onclick="toggleFnKeys()" class="px-3.5 py-2 rounded-xl text-xs font-semibold flex items-center gap-1.5 transition-all bg-violet-500/15 hover:bg-violet-500/25 text-violet-300 border border-violet-500/30 shadow-sm">
+                    <svg id="fn-keys-icon" class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" /></svg>
                     <span data-i18n="btnFnKeys">Teclas de Función:</span> <strong id="fn-keys-label" class="text-violet-400">ON</strong>
                 </button>
             </div>
@@ -463,7 +469,7 @@
         <div id="fn-bar-section" class="glass-panel rounded-2xl p-3 sm:px-5 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-3 border-sky-500/20 export-hide">
             <div class="flex items-center gap-2.5 shrink-0">
                 <div class="w-7 h-7 rounded-lg bg-sky-500/15 border border-sky-400/30 flex items-center justify-center text-sky-400">
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" /></svg>
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" /></svg>
                 </div>
                 <div>
                     <h2 data-i18n="fnBarTitle" class="text-xs font-bold text-sky-300 uppercase tracking-wider">Test de Funciones Sistema / Multimedia (Resaltado Azul)</h2>
@@ -484,8 +490,8 @@
             
             <!-- Hint inferior -->
             <div class="mt-2 flex flex-wrap items-center justify-between w-full text-[11px] text-slate-400 px-1 gap-2 export-hide">
-                <span><svg class="w-3.5 h-3.5 inline-block mr-1 -mt-0.5 text-yellow-400" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M9 18h6M10 22h4M12 2a7 7 0 00-4 12.7c.6.5 1 1.3 1 2.1V17h6v-.2c0-.8.4-1.6 1-2.1A7 7 0 0012 2z"/></svg><span data-i18n="hintLeft">Presiona cualquier tecla física para probarla. Las funciones de sistema (Brillo, Volumen, Media) se iluminan en azul.</span></span>
-                <span><svg class="w-3.5 h-3.5 inline-block mr-1 -mt-0.5 text-sky-400" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="6" y="3" width="12" height="18" rx="6"/><line x1="12" y1="7" x2="12" y2="11"/></svg><span data-i18n="hintRight">Haz clic derecho sobre cualquier tecla (o activa el Modo Marcar Avería) para marcarla en rojo.</span></span>
+                <span><svg class="w-3.5 h-3.5 inline-block mr-1 -mt-0.5 text-yellow-400" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18h6M10 22h4M12 2a7 7 0 00-4 12.7c.6.5 1 1.3 1 2.1V17h6v-.2c0-.8.4-1.6 1-2.1A7 7 0 0012 2z"/></svg><span data-i18n="hintLeft">Presiona cualquier tecla física para probarla. Las funciones de sistema (Brillo, Volumen, Media) se iluminan en azul.</span></span>
+                <span><svg class="w-3.5 h-3.5 inline-block mr-1 -mt-0.5 text-sky-400" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="3" width="12" height="18" rx="6"/><line x1="12" y1="7" x2="12" y2="11"/></svg><span data-i18n="hintRight">Haz clic derecho sobre cualquier tecla (o activa el Modo Marcar Avería) para marcarla en rojo.</span></span>
             </div>
         </main>
 
@@ -552,7 +558,7 @@
             <div class="glass-panel rounded-2xl p-4 flex flex-col justify-between">
                 <div class="flex items-center justify-between mb-2">
                     <span data-i18n="cardHistory" class="text-xs font-semibold uppercase tracking-wider text-slate-400">Historial Reciente</span>
-                    <button onclick="clearHistory()" data-i18n="btnClearHistory" class="text-[11px] text-slate-400 hover:text-white transition-colors">Borrar</button>
+                    <button type="button" onclick="clearHistory()" data-i18n="btnClearHistory" class="text-[11px] text-slate-400 hover:text-white transition-colors">Borrar</button>
                 </div>
                 <div id="key-history" class="flex flex-wrap gap-1.5 items-center content-start h-[76px] overflow-y-auto p-2 bg-slate-950/60 rounded-xl border border-white/5">
                     <span data-i18n="historyEmpty" class="text-xs text-slate-500 italic">Las teclas presionadas aparecerán aquí...</span>
@@ -560,6 +566,23 @@
             </div>
 
         </section>
+
+        <!-- Pie de página con autor y enlace al repositorio -->
+        <footer class="glass-panel rounded-2xl px-4 py-3 flex flex-wrap items-center justify-between gap-3 text-xs text-slate-400 export-hide">
+            <div class="flex items-center gap-2">
+                <img src="Logo.png" alt="OpenKeyTest Logo" class="w-4 h-4 object-contain">
+                <span class="font-semibold text-slate-200">OpenKeyTest</span>
+                <span class="font-mono text-[10px] px-1.5 py-0.5 rounded bg-slate-800/80 text-slate-400 border border-white/10">v1.0.0</span>
+                <span>·</span>
+                <span>by <strong class="text-slate-200 font-medium">EdwarlyGamer999+</strong></span>
+            </div>
+            <a href="https://github.com/edwarly999plus/Open-Key-Test" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 font-mono text-[11px] text-slate-300 hover:text-emerald-400 transition-colors">
+                <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+                </svg>
+                <span>github.com/edwarly999plus/Open-Key-Test</span>
+            </a>
+        </footer>
     </div>
 
     <!-- Toast de notificación flotante -->
